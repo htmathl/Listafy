@@ -1,0 +1,42 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+nav img{
+    width: 100px;
+}
+
+#nav-items{
+    display: flex;
+    gap: 2px;
+}
+
+#nav-items a{
+    background-color: #c1c2c3;
+    padding: 12px 6px;
+    text-decoration: none;
+    color: black;
+
+}
+
+section{
+    display: flex;
+    padding: 24px;
+    margin-top: 45px;
+
+    gap: 40px;
+}
+
+section article{
+    flex: 2;
+    text-align: justify;
+}
+
+section aside{
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+}
