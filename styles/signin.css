@@ -45,20 +45,19 @@ body {
 }
 
 .input {
-  background: none;
-  border: 0;
   outline: 0;
   height: 40px;
-  width: 100%;
-  border-bottom: 1px solid #eee;
+  border: 1px solid #000;
+  border-radius: 5px;
   font-size: .9rem;
   padding: 8px 15px;
+  margin-bottom: 5px;
 }
 
 .form-section {
   padding: 16px;
   font-size: .85rem;
-  background-color: #e0ecfb;
+  background-color: rgba(102, 102, 102, 0.1);
   box-shadow: rgb(0 0 0 / 8%) 0 -1px;
 }
 
