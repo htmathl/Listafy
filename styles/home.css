@@ -34,7 +34,7 @@ nav img{
     box-shadow: 2px 2px 0px 0px black;
 }
 
-section{
+header{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -59,4 +59,31 @@ article div{
     width: 98%;
 }
 
+#utilities{
+    text-align: center;
+    margin-top: 180px;
+}
 
+.utilities-container{
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+    margin-top: 60px;
+}
+
+.utility{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.utility:hover{
+    opacity: 1;
+}
+
+.utility-title{
+    font-size: 14pt;
+    font-weight: 500;
+}
