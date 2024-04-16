@@ -1,9 +1,26 @@
-*{
+* {
     border: 0;
     box-sizing: border-box;
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.36);
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: black;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
 }
