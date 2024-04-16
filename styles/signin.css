@@ -1,8 +1,17 @@
-body {
-  height: 90vh;
+#logo{
+  text-align: center;
+  margin-top: -20px;
+}
+
+#logo img{
+  width: 140px;
+}
+
+.signin{
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
