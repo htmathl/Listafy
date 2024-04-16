@@ -75,15 +75,20 @@ article div{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    opacity: 0.6;
+    color: #0000005f;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .utility:hover{
-    opacity: 1;
+    color: black;
 }
 
 .utility-title{
     font-size: 14pt;
     font-weight: 500;
+}
+
+svg {
+    transition: 0.5s;
 }
