@@ -2,7 +2,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px;
+    padding: 4px 12px;
 }
 
 nav img{
@@ -48,6 +48,7 @@ article{
 
 article h1{
     font-size: 20pt;
+    margin: 12px;
 }
 
 article div{
