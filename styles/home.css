@@ -1,11 +1,11 @@
-nav{
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 4px 12px;
 }
 
-nav img{
+nav img {
     width: 100px;
 }
 
@@ -21,50 +21,50 @@ nav img{
     box-shadow: 4px 4px 0px 0px black;
 }
 
-#nav-items button a{
+#nav-items button a {
     text-decoration: none;
     color: black;
 }
 
-#nav-items button a:visited{
+#nav-items button a:visited {
     color: black;
 }
 
-#nav-items button:hover{
+#nav-items button:hover {
     box-shadow: 2px 2px 0px 0px black;
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 12px;
 }
 
-article{
+article {
     text-align: center;
     max-width: 600px;
 }
 
-article h1{
+article h1 {
     font-size: 20pt;
     margin: 12px;
 }
 
-article div{
+article div {
     text-align: justify;
 }
 
-.image-container img{
+.image-container img {
     width: 98%;
 }
 
-#utilities{
+#utilities {
     text-align: center;
     margin-top: 180px;
 }
 
-.utilities-container{
+.utilities-container {
     display: flex;
     justify-content: center;
     gap: 180px;
@@ -72,7 +72,7 @@ article div{
     margin-bottom: 40px;
 }
 
-.utility{
+.utility {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,11 +81,11 @@ article div{
     cursor: pointer;
 }
 
-.utility:hover{
+.utility:hover {
     color: black;
 }
 
-.utility-title{
+.utility-title {
     font-size: 14pt;
     font-weight: 500;
 }
@@ -94,13 +94,30 @@ svg {
     transition: 0.5s;
 }
 
-#utilities img{
+#utilities img {
     width: 40em;
     max-width: 98%;
 }
 
+#cards {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 120px;
+}
+
+.info-card {
+    padding: 24px;
+    max-width: 400px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #d9d9d9,
+                -20px -20px 60px #ffffff;
+}
+
 @media screen and (max-width: 562px) {
-    .utilities-container{
+    .utilities-container {
         gap: 40px;
     }
 }
