@@ -100,7 +100,7 @@ svg {
 }
 
 #cards {
-    margin-top: 80px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -118,7 +118,9 @@ svg {
 }
 
 .info-card:hover {
-    box-shadow: 0px 0px 0px 0px #ffffff;
+    background: linear-gradient(315deg, #e6e6e6, #ffffff);
+    box-shadow: -20px -20px 60px #d9d9d9,
+        20px 20px 60px #ffffff;
 }
 
 @media screen and (max-width: 562px) {
