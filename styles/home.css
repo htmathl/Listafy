@@ -68,7 +68,8 @@ article div{
     display: flex;
     justify-content: center;
     gap: 180px;
-    margin-top: 60px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .utility{
@@ -91,4 +92,8 @@ article div{
 
 svg {
     transition: 0.5s;
+}
+
+#utilities img{
+    width: 600px;
 }
