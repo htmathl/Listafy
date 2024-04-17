@@ -100,11 +100,17 @@ svg {
 }
 
 #cards {
-    margin-top: 100px;
+    margin-top: 200px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 120px;
+}
+
+#card-persons{
+    position: absolute;
+    margin-left: 240px;
+    margin-top: 42px;
 }
 
 .info-card {
@@ -126,5 +132,15 @@ svg {
 @media screen and (max-width: 562px) {
     .utilities-container {
         gap: 40px;
+    }
+
+    #card-persons{
+        margin-left: 40px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #card-persons{
+        display: none;
     }
 }
