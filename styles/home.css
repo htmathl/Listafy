@@ -95,5 +95,12 @@ svg {
 }
 
 #utilities img{
-    width: 600px;
+    width: 40em;
+    max-width: 98%;
+}
+
+@media screen and (max-width: 562px) {
+    .utilities-container{
+        gap: 40px;
+    }
 }
