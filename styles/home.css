@@ -105,6 +105,7 @@ svg {
     justify-content: center;
     flex-wrap: wrap;
     gap: 120px;
+    padding-inline: 12px;
 }
 
 #card-persons{
