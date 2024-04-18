@@ -8,7 +8,7 @@ let cores = {
 let botoes = document.querySelectorAll('.svgs');
 let util = document.querySelectorAll('.utility');
 
-for(let i = 0; i < 3; i++) {
+for(let i in botoes) {
     util[i].addEventListener('mouseover', () => {
         botoes[i].style.fill = cores[botoes[i].ariaLabel];
     });
