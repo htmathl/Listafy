@@ -2,8 +2,7 @@ let cores = {
     'target': '#faa700',
     'bell': '#ea4e43',
     'list': '#076097'
-}
-
+};
 
 let botoes = document.querySelectorAll('.svgs');
 let util = document.querySelectorAll('.utility');
