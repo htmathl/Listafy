@@ -19,15 +19,15 @@
 
         <section class="signup">
             <div class="form-box">
-                <form class="form">
+                <form class="form" method="post" action="../php/sign-up.php">
                     <span class="title">Cadastre-se</span>
                     <span class="subtitle">Crie uma conta com seu email!</span>
                     <div class="form-container">
-                        <input type="text" class="input" placeholder="Nome">
-                        <input type="email" class="input" placeholder="Email">
-                        <input type="password" class="input" placeholder="Senha">
+                        <input type="text" class="input" placeholder="Nome" name="txtusername">
+                        <input type="email" class="input" placeholder="Email" name="txtemail">
+                        <input type="password" class="input" placeholder="Senha" name="txtpassword">
                     </div>
-                    <button>Criar conta</button>
+                    <button type="submit">Criar conta</button>
                 </form>
                 <div class="form-section">
                     <p>Já tem uma conta? <a href="./sign-in.html">Log in</a> </p>
