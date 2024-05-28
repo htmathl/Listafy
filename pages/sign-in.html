@@ -19,17 +19,17 @@
 
     <section action="../php/sign-in.php" class="signin">
         <div class="form-box">
-            <form class="form" method="post" action="login.php">
+            <form class="form" method="post" action="../php/sign-in.php">
                 <span class="title">Login</span>
                 <span class="subtitle">Bem-vindo novamente!</span>
                 <div class="form-container">
-                    <input type="email" class="input" placeholder="Email">
-                    <input type="password" class="input" placeholder="Senha">
+                    <input type="email" class="input" name="txtemail" placeholder="Email">
+                    <input type="password" class="input" name="txtpassword" placeholder="Senha">
                 </div>
-                <button>Entrar</button>
+                <button type="submit">Entrar</button>
             </form>
             <div class="form-section">
-                <p>Não tem uma conta? <a href="./sign-up.html">Cadastre-se</a> </p>
+                <p>Não tem uma conta? <a href="./sign-up.html">Cadastre-se</a></p>
             </div>
         </div>
     </section>
