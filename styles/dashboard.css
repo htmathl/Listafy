@@ -5,7 +5,7 @@ nav {
     padding: 4px 12px;
 }
 
-#popup {
+#popup-create-todo {
     display: none;
     position: fixed;
     top: 0;
@@ -16,11 +16,97 @@ nav {
     z-index: 1;
 }
 
+#popup-create-todo #popup-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 50px;
+}
+
+.form-box {
+    max-width: 300px;
+    border: 3px solid black;
+    overflow: hidden;
+    border-radius: 16px;
+    color: #010101;
+    box-shadow: 5px 5px 0px 0px black;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px ;
+    gap: 16px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+/*Form text*/
+.title {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+}
+
+/*Inputs box*/
+.form-container {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 1rem 0 .5rem;
+    width: 100%;
+}
+
+.input {
+    outline: 0;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: .9rem;
+    padding: 8px 15px;
+    margin-bottom: 5px;
+
+    width: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*Button*/
+.button-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.button-container button {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+
+.form button:hover {
+    border: 1px solid white;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
 .nav-logo img {
     width: 100px;
 }
 
-.new-ToDo button{
+.new-ToDo button {
     font-size: 14px;
     background-color: transparent;
     padding: 6px;
@@ -38,19 +124,19 @@ nav {
     box-shadow: 2px 2px 0px 0px black;
 }
 
-main{
+main {
     padding: 24px 40px;
 }
 
-.to-do{
+.to-do {
     border: 3px solid black;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
 }
 
-.to-do-title{
+.to-do-title {
     font-size: 14px;
     font-weight: 500;
-    
+
 }
