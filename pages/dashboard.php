@@ -18,7 +18,7 @@
 
     <body>
 
-        <div id="popup">
+        <div id="popup-create-todo">
             <div id="popup-content">
                 <form action="../php/create-todo.php" method="POST">
                     <input type="text" name="titulo" id="titulo" placeholder="Título">
@@ -42,24 +42,24 @@
 
         <main>
             <?php
-            if (!$con) {
-                echo('impossível conectar: '. mysqli_error());
-            } else {
-                mysqli_select_db($con, "listafy");
-                $sql = mysqli_query($con, "SELECT * FROM todo WHERE id_usuario = '$id'");
-                while ($row = mysqli_fetch_assoc($sql)) {
-                    $conteudo_nota = $row['conteudo_nota'];
-                    $titulo_nota = $row['titulo_nota'];
-                    $data_criacao = $row['data_criacao'];
-                
-                    echo "<div class='to-do'>
-                            <span class='to-do-title'>$titulo_nota</span>
-                            <br/>
-                            <span class='to-do-content'>$conteudo_nota</span>
-                        </div>";
+                if (!$con) {
+                    echo('impossível conectar: '. mysqli_error());
+                } else {
+                    mysqli_select_db($con, "listafy");
+                    $sql = mysqli_query($con, "SELECT * FROM todo WHERE id_usuario = '$id'");
+                    while ($row = mysqli_fetch_assoc($sql)) {
+                        $conteudo_nota = $row['conteudo_nota'];
+                        $titulo_nota = $row['titulo_nota'];
+                        $data_criacao = $row['data_criacao'];
+                    
+                        echo "<div class='to-do'>
+                                <span class='to-do-title'>$titulo_nota</span>
+                                <br/>
+                                <span class='to-do-content'>$conteudo_nota</span>
+                            </div>";
+                    }
                 }
-            }
-        ?>
+            ?>
         </main>
     </body>
 
