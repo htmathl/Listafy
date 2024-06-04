@@ -17,25 +17,22 @@
     ?>
 
     <body>
-
         <div id="popup-create-todo">
-            <div id="popup-create-todo">
-                <div id="popup-content">
-                    <div class="form-box">
-                        <form class="form" method="post" action="../php/create-todo.php">
-                            <span class="title">Adicionar to-do</span>
-                            <span class="subtitle">preencha os campos</span>
-                            <div class="form-container">
-                                <input type="text" class="input" name="titulo" id="titulo" placeholder="Título">
-                                <textarea name="conteudo" style="height: 120px;" class="input" id="conteudo" placeholder="Conteúdo"></textarea>
-                            </div>
-                            
-                            <div class="button-container">
-                                <button type="button" id="button-cancel">cancelar</button>
-                                <button type="submit">criar</button>
-                            </div>
-                        </form>
-                    </div>
+            <div id="popup-content">
+                <div class="form-box">
+                    <form class="form" method="post" action="../php/create-todo.php?id=<?php echo $id; ?>">
+                        <span class="title">Adicionar to-do</span>
+                        <span class="subtitle">preencha os campos</span>
+                        <div class="form-container">
+                            <input type="text" class="input" name="txttitle" id="titulo" placeholder="Título">
+                            <textarea name="txtcontent" style="height: 120px;" class="input" id="conteudo" placeholder="Conteúdo"></textarea>
+                        </div>
+                        
+                        <div class="button-container">
+                            <button type="button" id="button-cancel">cancelar</button>
+                            <button type="submit">criar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
