@@ -135,6 +135,12 @@ main {
     margin-bottom: 20px;
 }
 
+.to-do-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .to-do-title {
     font-size: 14px;
     font-weight: 500;

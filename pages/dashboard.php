@@ -62,6 +62,16 @@
                         $data_criacao = $row['data_criacao'];
                     
                         echo "<div class='to-do'>
+                                <div class='to-do-header'>
+                                    <div class='header-button'>
+                                        <img src='../assets/edit.svg' alt='editar'>
+                                    </div>
+                            
+                                    <div class='header-button'>
+                                        <img src='../assets/close.svg' alt='excluir'>
+                                    </div>
+                                </div>
+
                                 <span class='to-do-title'>$titulo_nota</span>
                                 <br/>
                                 <span class='to-do-content'>$conteudo_nota</span>
@@ -71,6 +81,8 @@
             ?>
         </main>
     </body>
+
+
 
 </html>
 
