@@ -60,15 +60,20 @@
                         $conteudo_nota = $row['conteudo_nota'];
                         $titulo_nota = $row['titulo_nota'];
                         $data_criacao = $row['data_criacao'];
+                        $id_nota = $row['id_nota']; //conferir o nome da coluna no banco de dados na terça!!!!!!!!!!!
                     
-                        echo "<div class='to-do'>
+                        echo "<div class='to-do' data-id='$id_nota'>
                                 <div class='to-do-header'>
                                     <div class='header-button'>
-                                        <img src='../assets/edit.svg' alt='editar'>
+                                        <a href='update_todo.php?id=$id_nota'>
+                                            <img src='../assets/edit.svg' alt='excluir'>
+                                        </a>
                                     </div>
                             
                                     <div class='header-button'>
-                                        <img src='../assets/close.svg' alt='excluir'>
+                                        <a href='delete_todo.php?id=$id_nota'>
+                                            <img src='../assets/close.svg' alt='excluir'>
+                                        </a>
                                     </div>
                                 </div>
 
