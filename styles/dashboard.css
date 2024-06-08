@@ -20,8 +20,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding-top: 50px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .form-box {
@@ -71,7 +72,6 @@ nav {
     font-size: .9rem;
     padding: 8px 15px;
     margin-bottom: 5px;
-
     width: 200px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -120,7 +120,6 @@ nav {
 }
 
 .new-ToDo button:hover {
-
     box-shadow: 2px 2px 0px 0px black;
 }
 

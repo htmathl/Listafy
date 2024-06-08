@@ -15,8 +15,8 @@
                 echo('impossível conectar: '. mysqli_error());
             } else {
                 mysqli_select_db($con, "listafy");
-                $sql = "INSERT INTO todo (conteudo_nota, titulo_nota, id_usuario)
-                        VALUES ('$conteudo', '$titulo', '$id')";
+                $sql = "INSERT INTO todo (conteudo_nota, titulo_nota, id_usuario, data_criacao)
+                        VALUES ('$conteudo', '$titulo', '$id', NOW())";
             }
 
             if (mysqli_query($con, $sql)) {

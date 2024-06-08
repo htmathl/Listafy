@@ -24,7 +24,7 @@
             } else {
                 echo('Erro no cadastro: ' . mysqli_error());
             }
-            mysqli_close($con);                 
+            mysqli_close($con);              
         ?>
     </body>
 </html>

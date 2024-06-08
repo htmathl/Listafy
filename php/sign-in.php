@@ -18,12 +18,12 @@
                 $id = mysqli_query($con, "SELECT id_usuario FROM usuarios WHERE email = '$email' AND senha = '$senha'");
 
                 if(mysqli_num_rows($sql) == 0) {
-                    echo "odeio php";
+                    echo "Usuário ou senha inválidos!";
                 } else {
                     $row = mysqli_fetch_assoc($sql);
                     $id = $row['id_usuario'];
                     header("Location: ../pages/dashboard.php?id=" . $id);
-                    mysqli_close($con);        
+                    mysqli_close($con);
                 }
             }
 
