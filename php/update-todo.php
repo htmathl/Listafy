@@ -7,8 +7,8 @@
         <?php
             $titulo = $_POST["txttitle"];
             $conteudo = $_POST["txtcontent"];
-            $idNota = $_POST["idNota"];
-            $idUsuario = $_GET["id"];
+            $idNota = $_GET["id"];
+            $idUsuario = $_GET["idUsuario"];
             $con = mysqli_connect("localhost", "root", "listafy123");
 
             if (!$con) {

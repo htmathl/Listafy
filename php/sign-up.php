@@ -11,16 +11,18 @@
             $senha = $_POST["txtpassword"];
             $con = mysqli_connect("localhost","root","listafy123");
 
-            if (!$con) {
-                echo('impossível conectar: '. mysqli_error());
+            if (!$con || !$nome || !$email || !$senha) {
+                echo('impossível conectar: '. mysqli_error($con));
             } else {
+                // Criando um hash da senha
+                $hashedSenha = password_hash($senha, PASSWORD_DEFAULT);
                 mysqli_select_db($con, "listafy");
                 $sql = "INSERT INTO usuarios (email, senha, nome)
-                        VALUES ('$email', '$senha', '$nome')";
+                        VALUES ('$email', '$hashedSenha', '$nome')";
             }
 
             if (mysqli_query($con, $sql)) {
-                include '../pages/sign-in.html';
+                header("Location: ../pages/sign-in.html");;
             } else {
                 echo('Erro no cadastro: ' . mysqli_error());
             }

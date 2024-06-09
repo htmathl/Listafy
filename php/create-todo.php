@@ -6,9 +6,10 @@
         
     <body>
         <?php
+            session_start();
             $titulo = $_POST["txttitle"];
             $conteudo = $_POST["txtcontent"];
-            $id = $_GET["id"];
+            $id = $_SESSION["id_usuario"];
             $con = mysqli_connect("localhost","root","listafy123");
 
             if (!$con) {

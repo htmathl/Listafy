@@ -6,9 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
         <title>Dashboard</title>
-        <link rel="stylesheet" href="../styles/dashboard.css">
         <link rel="stylesheet" href="../styles/global.css">
+        <link rel="stylesheet" href="../styles/dashboard.css?v=<?php echo time(); ?>">
         <script src="../js/createTodo.js" defer></script>
+        <script src="../js/updateTodo.js" defer></script>
     </head>
 
     <?php
@@ -49,14 +50,34 @@
             </div>
         </nav>
 
+        <section action="../php/update-todo.php/id=" id="updateTodo">
+            <div class="form-box">
+                <form class="form" method="post" action="../php/update-todo.php">
+                    <span class="title">Update Todo</span>
+                    <span class="subtitle">Atualize sua tarefa</span>
+                    <div class="form-container">
+                        <input type="text" class="input" name="txttitle" placeholder="Título">
+                        <textarea class="input" name="txtcontent" placeholder="Descrição"></textarea>
+                    </div>
+                    <button id="btnUpdate" type="submit">Atualizar</button>
+                </form>
+                <div class="form-section">
+                    <p>Voltar para a lista de tarefas? <a href="./todo-list.html">Clique aqui</a></p>
+                </div>
+            </div>
+        </section>
+
         <main>
             <?php
+                session_start();
+                $id = $_SESSION['id_usuario'];
                 // Conectar ao banco de dados
-                if (!$con) {
+                if (!$con && !isset($_SESSION['id_usuario'])) {
                     echo('impossível conectar: '. mysqli_error());
                 } else {
                     mysqli_select_db($con, "listafy");
                     // Ordenar as notas por data_criacao
+                    
                     $sql = mysqli_query($con, "SELECT * FROM todo WHERE id_usuario = '$id' ORDER BY data_criacao DESC");
                     $data_atual_grupo = null; // Variável para acompanhar a data atual do grupo
 
@@ -78,9 +99,9 @@
                             <div class='to-do' data-id='$id_nota'>
                                 <div class='to-do-header'>
                                     <div class='header-button'>
-                                        <a href='update_todo.php?id=$id_nota'>
+                                        <button id='btnU'>
                                             <img src='../assets/edit.svg' alt='editar'>
-                                        </a>
+                                        </button>
                                     </div>
 
                                     <div class='header-button'>

@@ -145,3 +145,7 @@ main {
     font-weight: 500;
 
 }
+
+#updateTodo {
+    display: none;
+}
