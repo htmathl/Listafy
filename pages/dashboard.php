@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
         <title>Dashboard</title>
-        <link rel="stylesheet" href="../styles/global.css">
+        <link rel="stylesheet" href="../styles/global.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="../styles/dashboard.css?v=<?php echo time(); ?>">
-        <script src="../js/createTodo.js" defer></script>
-        <script src="../js/updateTodo.js" defer></script>
+        <script src="../js/createTodo.js?v=<?php echo time(); ?>" defer></script>
+        <script src="../js/updateTodo.js?v=<?php echo time(); ?>" defer></script>
     </head>
 
     <?php
@@ -25,8 +25,8 @@
                         <span class="title">Adicionar to-do</span>
                         <span class="subtitle">preencha os campos</span>
                         <div class="form-container">
-                            <input type="text" class="input" name="txttitle" id="titulo" placeholder="Título">
-                            <textarea name="txtcontent" style="height: 120px;" class="input" id="conteudo" placeholder="Conteúdo"></textarea>
+                            <input type="text" class="input" name="txttitle" id="titulo" placeholder="Título" required>
+                            <textarea name="txtcontent" style="height: 120px;" class="input" id="conteudo" placeholder="Conteúdo" required></textarea>
                         </div>
                         
                         <div class="button-container">
@@ -50,30 +50,13 @@
             </div>
         </nav>
 
-        <section action="../php/update-todo.php/id=" id="updateTodo">
-            <div class="form-box">
-                <form class="form" method="post" action="../php/update-todo.php">
-                    <span class="title">Update Todo</span>
-                    <span class="subtitle">Atualize sua tarefa</span>
-                    <div class="form-container">
-                        <input type="text" class="input" name="txttitle" placeholder="Título">
-                        <textarea class="input" name="txtcontent" placeholder="Descrição"></textarea>
-                    </div>
-                    <button id="btnUpdate" type="submit">Atualizar</button>
-                </form>
-                <div class="form-section">
-                    <p>Voltar para a lista de tarefas? <a href="./todo-list.html">Clique aqui</a></p>
-                </div>
-            </div>
-        </section>
-
         <main>
             <?php
                 session_start();
                 $id = $_SESSION['id_usuario'];
                 // Conectar ao banco de dados
                 if (!$con && !isset($_SESSION['id_usuario'])) {
-                    echo('impossível conectar: '. mysqli_error());
+                    echo('impossível conectar: '. mysqli_error($con));
                 } else {
                     mysqli_select_db($con, "listafy");
                     // Ordenar as notas por data_criacao
@@ -87,6 +70,28 @@
                         $data_criacao = $row['data_criacao'];
                         $id_nota = $row['id_nota'];
 
+                        //atualiar nota
+                        echo "
+                            <section id='updateTodo'>
+                                <div class='form-box' id='updateTodoContent'>
+                                   <form class='form' method='post' action='../php/update-todo.php'>
+                                       <span class='title'>Update Todo</span>
+                                       <span class='subtitle'>Atualize sua tarefa</span>
+                                       <div class='form-container'>
+                                           <input type='text' class='input' name='txttitle' id='updateTitle' placeholder='Título' required>
+                                           <textarea class='input' name='txtcontent' id='updateContent' placeholder='Descrição' required></textarea>
+                                           <input type='hidden' name='id_nota' id='notaId'>
+                                           <input type='hidden' name='idUsuario' value='$id'>
+                                       </div>
+                                       <div class='button-container'>
+                                             <button type='button' id='button-cancel-upd'>cancelar</button>
+                                             <button type='submit'>Atualizar</button>
+                                        </div>
+                                   </form>
+                                </div>
+                            </section>
+                        ";
+
                         // Verificar se a data da nota é diferente da data atual do grupo
                         if ($data_criacao != $data_atual_grupo) {
                             // Se for uma nova data, exibir a data e atualizar a data_atual_grupo
@@ -99,7 +104,7 @@
                             <div class='to-do' data-id='$id_nota'>
                                 <div class='to-do-header'>
                                     <div class='header-button'>
-                                        <button id='btnU'>
+                                        <button id='btnU' class='btnUs' onclick='updateForm(\"$titulo_nota\", \"$conteudo_nota\", \"$id_nota\")'>
                                             <img src='../assets/edit.svg' alt='editar'>
                                         </button>
                                     </div>

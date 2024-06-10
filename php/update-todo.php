@@ -7,15 +7,15 @@
         <?php
             $titulo = $_POST["txttitle"];
             $conteudo = $_POST["txtcontent"];
-            $idNota = $_GET["id"];
-            $idUsuario = $_GET["idUsuario"];
+            $idNota = $_POST["id_nota"];
+            $idUsuario = $_POST["idUsuario"];
             $con = mysqli_connect("localhost", "root", "listafy123");
 
             if (!$con) {
                 echo('Impossível conectar: ' . mysqli_error($con));
             } else {
                 mysqli_select_db($con, "listafy");
-                $sql = "UPDATE todo SET conteudo_nota = '$conteudo', titulo_nota = '$titulo', data_atualizacao = NOW() 
+                $sql = "UPDATE todo SET conteudo_nota = '$conteudo', titulo_nota = '$titulo', data_criacao = NOW() 
                         WHERE id_nota = '$idNota' AND id_usuario = '$idUsuario'";
 
                 if (mysqli_query($con, $sql)) {

@@ -17,4 +17,3 @@ if (mysqli_query($con, $sql)) {
 }
 
 mysqli_close($con);
-?>

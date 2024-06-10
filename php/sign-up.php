@@ -24,7 +24,7 @@
             if (mysqli_query($con, $sql)) {
                 header("Location: ../pages/sign-in.html");;
             } else {
-                echo('Erro no cadastro: ' . mysqli_error());
+                echo('Erro no cadastro: ' . mysqli_error($con));
             }
             mysqli_close($con);              
         ?>

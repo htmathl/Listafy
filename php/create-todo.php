@@ -13,7 +13,7 @@
             $con = mysqli_connect("localhost","root","listafy123");
 
             if (!$con) {
-                echo('impossível conectar: '. mysqli_error());
+                echo('impossível conectar: '. mysqli_error($con));
             } else {
                 mysqli_select_db($con, "listafy");
                 $sql = "INSERT INTO todo (conteudo_nota, titulo_nota, id_usuario, data_criacao)
@@ -23,8 +23,9 @@
             if (mysqli_query($con, $sql)) {
                 header("Location: ../pages/dashboard.php?id=" . $id);
             } else {
-                echo('Erro no cadastro da nota: ' . mysqli_error());
+                echo('Erro no cadastro da nota: ' . mysqli_error($con));
             }
+            
             mysqli_close($con);                 
         ?>
     </body>
