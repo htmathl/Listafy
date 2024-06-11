@@ -63,7 +63,6 @@ nav {
 
 /*Inputs box*/
 .form-container {
-    overflow: hidden;
     border-radius: 8px;
     background-color: #fff;
     margin: 1rem 0 .5rem;
@@ -81,15 +80,13 @@ nav {
     box-sizing: border-box;
 }
 
+
 .input:first-child {
-    border-bottom: none !important;
-    border-radius: 5px 5px 0 0;
     font-size: 1.4rem;
+    margin-bottom: 5px;
 }
 
 .input:last-child {
-    border-top: none !important;
-    border-radius: 0 0 5px 5px;
     font-size: 1rem;
 }
 
@@ -128,7 +125,7 @@ nav {
     font-weight: 700;
 }
 
-.nav-title :first-child {
+.nav-title :last-child {
     font-size: 18pt;
     background-image: linear-gradient(to bottom right, rebeccapurple, steelblue, turquoise);
     background-clip: text;
@@ -197,13 +194,13 @@ main {
 }
 
 #updateTitle {
-    border-bottom: none;
-    border-radius: 5px 5px 0 0;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
 }
 
 #updateContent {
-    border-top: none;
-    border-radius: 0 0 5px 5px;
+    font-size: 1rem;
+    height: 150px;
 }
 
 #btnU {

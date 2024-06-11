@@ -11,6 +11,7 @@
         <script src="../js/createTodo.js?v=<?php echo time(); ?>" defer></script>
         <script src="../js/updateTodo.js?v=<?php echo time(); ?>" defer></script>
         <script src="https://unpkg.com/typeit@@8.7.1/dist/index.umd.js" defer></script>
+        <script src="../js/rotacao.js?v=<?php echo time(); ?>" defer></script>
     </head>
 
     <?php
@@ -45,14 +46,14 @@
                 <img src="../assets/logo.png" alt="listafy logo">
             </div>
 
-            <div>
-            <?php 
-                try { 
-                    echo "<span class='nav-title'>Olá, <span> echo $_SESSION['nome']</span></span>"; 
-                } catch (e){ 
-                    header("Location: ../pages/sign-in.html"); 
-                } 
-            ?>
+            <div><span class='nav-title'><span> </span>, <span><?php echo " " . $_SESSION['nome'] ?>!</span></span></div>
+
+            <div class="Logout">
+                <a href="../php/sign-out.php">
+                    <button id="btnLogout">
+                        <img src="../assets/sign-out.svg" alt="sair">
+                    </button>
+                </a>
             </div>
 
             <div class="new-ToDo">
@@ -67,8 +68,7 @@
                 // Conectar ao banco de dados
                 if (!$con || !isset($_SESSION['id_usuario'])) {
                     if(!isset($_SESSION['id_usuario'])) {
-                        echo "Você não está logado! </br>";
-                        echo "<a href='./sign-in.html'>Clique aqui para fazer login</a>";
+                        header("Location: ../pages/sign-in-error.html"); 
                     } else {
                         echo('impossível conectar: '. mysqli_error($con));
                     }
@@ -85,7 +85,7 @@
                         $data_criacao = $row['data_criacao'];
                         $id_nota = $row['id_nota'];
 
-                        //atualiar nota
+                        //atualizar nota
                         echo "
                             <section id='updateTodo'>
                                 <div class='form-box' id='updateTodoContent'>
@@ -134,7 +134,7 @@
                                 <br/>
                                 <span class='to-do-content'>$conteudo_nota</span>
                             </div>
-                    ";
+                        ";
 
                     if(!$conteudo_nota) {
                         echo "
