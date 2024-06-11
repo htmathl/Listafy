@@ -117,7 +117,7 @@ nav {
 
 
 .nav-logo img {
-    width: 100px;
+    width: 110px;
 }
 
 .nav-title {
@@ -134,7 +134,7 @@ nav {
     color: black;
 }
 
-.new-ToDo button {
+.new-ToDo button{
     font-size: 14px;
     background-color: transparent;
     padding: 6px;
@@ -205,4 +205,31 @@ main {
 
 #btnU {
     background: none;
+}
+
+.buttons-container{
+    display: flex;
+    gap: 10px;
+}
+
+.Logout button{
+    font-size: 14px;
+    background-color: transparent;
+    padding: 6px;
+    text-decoration: none;
+    color: black;
+    border: 3px solid black;
+    border-radius: 5px;
+    transition: 0.5s;
+    box-shadow: 4px 4px 0px 0px black;
+    cursor: pointer;
+}
+
+.Logout button:hover {
+    box-shadow: 2px 2px 0px 0px black;
+}
+
+.data-grupo{
+    font-size: 14pt;
+    font-weight: 500;
 }

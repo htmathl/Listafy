@@ -48,18 +48,20 @@
 
             <div><span class='nav-title'><span> </span>, <span><?php echo " " . $_SESSION['nome'] ?>!</span></span></div>
 
-            <div class="Logout">
-                <a href="../php/sign-out.php">
-                    <button id="btnLogout">
-                        <img src="../assets/sign-out.svg" alt="sair">
-                    </button>
-                </a>
-            </div>
+            <div class="buttons-container">
+                <div class="Logout">
+                    <a href="../php/sign-out.php">
+                        <button id="btnLogout">
+                            <img src="../assets/sign-out.svg" alt="sair">
+                        </button>
+                    </a>
+                </div>
 
-            <div class="new-ToDo">
-                <button id="btnCreate">
-                    <img src="../assets/plus.svg" alt="criar novo to-do">
-                </button>
+                <div class="new-ToDo">
+                    <button id="btnCreate">
+                        <img src="../assets/plus.svg" alt="criar novo to-do">
+                    </button>
+                </div>
             </div>
         </nav>
 
@@ -78,6 +80,14 @@
                     
                     $sql = mysqli_query($con, "SELECT * FROM todo WHERE id_usuario = '$id' ORDER BY data_criacao DESC");
                     $data_atual_grupo = null; // Variável para acompanhar a data atual do grupo
+
+                    if(!isset($sql) || mysqli_num_rows($sql) == 0){
+                        echo "
+                            <div class='titleSemConteudo'>
+                                <span class='to-do-content'>Nenhuma nota aqui :(</span>
+                            </div>                        
+                        ";
+                    }
 
                     while ($row = mysqli_fetch_assoc($sql)) {
                         $conteudo_nota = $row['conteudo_nota'];
@@ -109,6 +119,9 @@
 
                         // Verificar se a data da nota é diferente da data atual do grupo
                         if ($data_criacao != $data_atual_grupo) {
+
+                            $data_criacao = implode("/", array_reverse(explode("-", $data_criacao)));
+
                             // Se for uma nova data, exibir a data e atualizar a data_atual_grupo
                             echo "<div class='data-grupo'></br>$data_criacao</div></br>";
                             $data_atual_grupo = $data_criacao;
@@ -135,14 +148,6 @@
                                 <span class='to-do-content'>$conteudo_nota</span>
                             </div>
                         ";
-
-                    if(!$conteudo_nota) {
-                        echo "
-                            <div class='titleSemConteudo'>
-                                <span class='to-do-content'>Sem conteúdo</span>
-                            </div>                        
-                        ";
-                    }
                 }
             }
             ?>
