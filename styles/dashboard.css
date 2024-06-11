@@ -26,7 +26,8 @@ nav {
 }
 
 .form-box {
-    min-width: 900px;
+    width: 90vw;
+    max-width: 900px;
     border: 3px solid black;
     overflow: hidden;
     border-radius: 16px;
@@ -179,6 +180,16 @@ main {
     transform: translateY(-50%);
     margin: auto;
     max-width: 900px;
+}
+
+#updateTitle {
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+}
+
+#updateContent {
+    border-top: none;
+    border-radius: 0 0 5px 5px;
 }
 
 #btnU {

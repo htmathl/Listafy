@@ -16,7 +16,7 @@
                 $senha = $_POST['txtpassword'];
             
                 // Buscar usuário no banco de dados
-                $sql = "SELECT id_usuario, senha FROM usuarios WHERE email = '$email'";
+                $sql = "SELECT id_usuario, senha, nome FROM usuarios WHERE email = '$email' LIMIT 1";
                 $result = mysqli_query($con, $sql);
                 $user = mysqli_fetch_assoc($result);
 
@@ -25,6 +25,7 @@
                 if ($user && password_verify($senha, $user['senha'])) {
                     // Senha correta, iniciar sessão
                     $_SESSION['id_usuario'] = $user['id_usuario'];
+                    $_SESSION['nome'] = $user['nome'];
                     header("Location: ../pages/dashboard.php?id=" . $user['id_usuario']); // Redirecionar para o dashboard
                     exit;
                 } else {

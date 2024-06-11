@@ -10,9 +10,11 @@
         <link rel="stylesheet" href="../styles/dashboard.css?v=<?php echo time(); ?>">
         <script src="../js/createTodo.js?v=<?php echo time(); ?>" defer></script>
         <script src="../js/updateTodo.js?v=<?php echo time(); ?>" defer></script>
+        <script src="https://unpkg.com/typeit@@8.7.1/dist/index.umd.js" defer></script>
     </head>
 
     <?php
+        session_start();
         $id = $_GET["id"];
         $con = mysqli_connect("localhost","root","listafy123");
     ?>
@@ -43,6 +45,10 @@
                 <img src="../assets/logo.png" alt="listafy logo">
             </div>
 
+            <div>
+                <span class="nav-title">Olá, <?php echo $_SESSION['nome']; ?></span>
+            </div>
+
             <div class="new-ToDo">
                 <button id="btnCreate">
                     <img src="../assets/plus.svg" alt="criar novo to-do">
@@ -52,11 +58,14 @@
 
         <main>
             <?php
-                session_start();
-                $id = $_SESSION['id_usuario'];
                 // Conectar ao banco de dados
-                if (!$con && !isset($_SESSION['id_usuario'])) {
-                    echo('impossível conectar: '. mysqli_error($con));
+                if (!$con || !isset($_SESSION['id_usuario'])) {
+                    if(!isset($_SESSION['id_usuario'])) {
+                        echo "Você não está logado! </br>";
+                        echo "<a href='./sign-in.html'>Clique aqui para fazer login</a>";
+                    } else {
+                        echo('impossível conectar: '. mysqli_error($con));
+                    }
                 } else {
                     mysqli_select_db($con, "listafy");
                     // Ordenar as notas por data_criacao
@@ -120,6 +129,14 @@
                                 <span class='to-do-content'>$conteudo_nota</span>
                             </div>
                     ";
+
+                    if(!$conteudo_nota) {
+                        echo "
+                            <div class='titleSemConteudo'>
+                                <span class='to-do-content'>Sem conteúdo</span>
+                            </div>                        
+                        ";
+                    }
                 }
             }
             ?>

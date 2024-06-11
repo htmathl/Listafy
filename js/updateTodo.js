@@ -1,11 +1,11 @@
 let btnUpdate = document.getElementById('btnUpdate');
 let btnU = document.querySelectorAll('.btnUs');
 let updateTodo = document.getElementById('updateTodo');
+let buttonCancelUpd = document.getElementById('button-cancel-upd');
 
 btnU.forEach((btn) => {
     btn.addEventListener('click', () => {
         updateTodo.style.display = 'block';
-        console.log(btn)
     });
 });
 
@@ -16,3 +16,7 @@ function updateForm(titulo, conteudo, id) {
     // Scroll para o formulário para melhorar a UX
     document.querySelector('.updateTodo').scrollIntoView({ behavior: 'smooth' });
 }
+
+buttonCancelUpd.addEventListener('click', () => {
+    updateTodo.style.display = 'none';
+});
