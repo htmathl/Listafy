@@ -27,8 +27,8 @@
                         <span class="title">Adicionar to-do</span>
                         <span class="subtitle">preencha os campos</span>
                         <div class="form-container">
-                            <input type="text" class="input" name="txttitle" id="titulo" placeholder="Título" required>
-                            <textarea name="txtcontent" style="height: 120px;" class="input" id="conteudo" placeholder="Conteúdo" required></textarea>
+                            <input type="text" class="input" name="txttitle" id="titulo" placeholder="Título" required autocomplete="off">
+                            <textarea name="txtcontent" style="height: 120px;" class="input" id="conteudo" placeholder="Conteúdo" required autocomplete="off"></textarea>
                         </div>
                         
                         <div class="button-container">
@@ -46,7 +46,13 @@
             </div>
 
             <div>
-                <span class="nav-title">Olá, <?php echo $_SESSION['nome']; ?></span>
+            <?php 
+                try { 
+                    echo "<span class='nav-title'>Olá, <span> echo $_SESSION['nome']</span></span>"; 
+                } catch (e){ 
+                    header("Location: ../pages/sign-in.html"); 
+                } 
+            ?>
             </div>
 
             <div class="new-ToDo">
