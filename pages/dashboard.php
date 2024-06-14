@@ -120,10 +120,10 @@
                         // Verificar se a data da nota é diferente da data atual do grupo
                         if ($data_criacao != $data_atual_grupo) {
 
-                            $data_criacao = implode("/", array_reverse(explode("-", $data_criacao)));
+                            $dataNova = implode("/", array_reverse(explode("-", $data_criacao)));
 
                             // Se for uma nova data, exibir a data e atualizar a data_atual_grupo
-                            echo "<div class='data-grupo'></br>$data_criacao</div></br>";
+                            echo "<div class='data-grupo'></br>$dataNova</div></br>";
                             $data_atual_grupo = $data_criacao;
                         }
 
